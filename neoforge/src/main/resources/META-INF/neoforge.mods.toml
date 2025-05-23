@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "unsafejs"
+version = "${version}"
+displayName = "UnsafeJS"
+authors = "YukkuriC"
+description = '''
+unlock some ancient dark magic for modern KJS
+'''
+#logoFile = ""
+
+[[dependencies.unsafejs]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.unsafejs]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+
+[[mixins]]
+config = "unsafejs.mixins.json"

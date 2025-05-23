@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "io.yukkuric.unsafejs.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "NoClassFilter",
+    "NoContextCheck"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
