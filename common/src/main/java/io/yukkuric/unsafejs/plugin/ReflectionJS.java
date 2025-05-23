@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Reflection {
+public class ReflectionJS {
 	private static final Map<String, Class<?>> classCache = new HashMap<>();
 
 	static {
