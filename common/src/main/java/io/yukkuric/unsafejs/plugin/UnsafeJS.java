@@ -28,4 +28,8 @@ public class UnsafeJS {
         var offset = isStatic ? theUnsafe.staticFieldOffset(field) : theUnsafe.objectFieldOffset(field);
         theUnsafe.putObject(base, offset, value);
     }
+
+    public Unsafe get() {
+        return theUnsafe;
+    }
 }

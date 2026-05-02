@@ -23,6 +23,7 @@ Provides a `Reflection` object with support for:
 ### 3. Unsafe API
 Provides an `Unsafe` object with support for:
 - `setField(obj, field, value)` - Directly set field values using sun.misc.Unsafe. **Ignores obj for static fields**
+- `get()` - Returns the underlying `sun.misc.Unsafe` instance for advanced operations
 
 ## Requirements
 
