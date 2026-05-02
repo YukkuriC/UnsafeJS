@@ -15,15 +15,17 @@ Restores the unrestricted capabilities from KubeJS 1.20 by bypassing security re
 - **Context Check Bypass** - Allows `AccessibleObject` and `ClassLoader` usage in scripts
 
 ### 2. Reflection API
-Provides a `Reflection` object with support for:
-- `toRawClass(obj)` - Convert object to raw Class. Supports object instance, class name string, or Class object
-- `getField(obj, name)` - Get specified field (supports private fields). **obj accepts class name string or Class object for static fields**
-- `getMethod(obj, name, types...)` - Get specified method (supports private methods). **obj accepts class name string or Class object for static methods**
+Provides a `Reflection` object for Java reflection operations:
+- `toRawClass(obj)` - Convert to Class object. Accepts object instance, class name string, or Class object directly
+- `getField(obj, name)` - Get declared field (supports private). Traverses superclass hierarchy
+- `getMethod(obj, name, types...)` - Get declared method (supports private). Traverses superclass hierarchy
 
 ### 3. Unsafe API
-Provides an `Unsafe` object with support for:
-- `setField(obj, field, value)` - Directly set field values using sun.misc.Unsafe. **Ignores obj for static fields**
-- `get()` - Returns the underlying `sun.misc.Unsafe` instance for advanced operations
+Provides an `Unsafe` object for low-level memory operations:
+- `setField(obj, field, value)` - Direct field write via `sun.misc.Unsafe`. field accepts Field object or field name string
+- `get()` - Returns raw `sun.misc.Unsafe` instance for advanced usage
+
+**Parameter Flexibility**: All object/class parameters accept multiple input types: object instances, fully qualified class name strings (e.g., `"java.lang.String"`), primitive type names (e.g., `"int"`, `"boolean"`), or Class objects. Static members can be accessed by passing a class reference instead of an instance.
 
 ## Requirements
 
