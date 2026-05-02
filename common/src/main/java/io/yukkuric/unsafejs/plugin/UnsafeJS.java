@@ -1,7 +1,5 @@
 package io.yukkuric.unsafejs.plugin;
 
-import com.mojang.datafixers.types.Type;
-import dev.latvian.mods.rhino.NativeJavaObject;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.AccessFlag;
@@ -12,7 +10,7 @@ public class UnsafeJS {
 
 	static {
 		try {
-			var getter = Unsafe.class.getDeclaredField("theUnsafe");
+			var getter = ReflectionJS.getField(Unsafe.class, "theUnsafe");
 			theUnsafe = (Unsafe) getter.get(null);
 		} catch (Throwable e) {
 			throw new RuntimeException(e);
