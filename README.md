@@ -13,6 +13,7 @@ UnsafeJS is a Minecraft NeoForge mod that acts as a KubeJS plugin, providing adv
 Restores the unrestricted capabilities from KubeJS 1.20 by bypassing security restrictions via Mixin injection:
 - **Class Filter Bypass** - Removes class access restrictions
 - **Context Check Bypass** - Allows `AccessibleObject` and `ClassLoader` usage in scripts
+- **MethodHandles Lookup Unlock** - Replaces restricted `MethodHandles.Lookup` in Rhino's `ContextFactory` with full-privilege lookup
 
 ### 2. Reflection API
 Provides a `Reflection` object for Java reflection operations:
