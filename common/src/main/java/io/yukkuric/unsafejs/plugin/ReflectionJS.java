@@ -49,6 +49,16 @@ public class ReflectionJS {
         return field;
     }
 
+    public static Object fastGet(Object obj, String name) throws IllegalAccessException, NoSuchFieldException, ClassNotFoundException {
+        var field = getField(obj, name);
+        return field.get(obj);
+    }
+
+    public static void fastSet(Object obj, String name, Object value) throws IllegalAccessException, NoSuchFieldException, ClassNotFoundException {
+        var field = getField(obj, name);
+        field.set(obj, value);
+    }
+
     public static Method getMethod(Object obj, String name, Object... types) throws ClassNotFoundException, NoSuchMethodException {
         var cls = toRawClass(obj);
         Class<?>[] input = new Class[types.length];
